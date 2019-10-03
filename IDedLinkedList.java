@@ -7,7 +7,7 @@
 
 
 
- public class IDedLinkedList<AnyType extends IdedObject>
+ public class IDedLinkedList<AnyType extends IDedObject>
  {
 
     Node head;
@@ -30,7 +30,7 @@
     //-------------Constructors-----------------------------------------------
     public IDedLinkedList()
     {
-        head = new Node(0);
+        head = null;
     }
 
 
@@ -107,7 +107,15 @@
             //if found, change pointers
             if (curr.data.getID() == ID)
             {
-                prev.next = curr.next;
+                if (prev != null)
+                {
+                    prev.next = curr.next;
+                }
+                else
+                {
+                    head = curr.next;
+                }
+                return curr.data;
             }
             //move to next node
             else

@@ -20,7 +20,6 @@ public class P2Driver {
 
     public static void main(String[] args) {
         
-        
         Scanner in;
         if (args.length!=2) {
             System.out.print("Error Incorrect Arguments:" + Arrays.toString(args));
@@ -29,7 +28,6 @@ public class P2Driver {
         }
 
         try {
-
             //file input
 	        File input_file = new File(args[0]);
             in = new Scanner(input_file);
@@ -38,7 +36,7 @@ public class P2Driver {
             File output_file = new File(args[1]); 
             PrintWriter out;
             out = new PrintWriter(output_file);
-            
+
             //create new IDedLinkedList
             IDedLinkedList<MyItem> LL = new IDedLinkedList(); 
 
@@ -63,7 +61,7 @@ public class P2Driver {
                 {
 		            in.nextLine();
 		            continue;
-	            }
+                }
                 switch (operation)
                 {
                     //if "End" break out of the loop
@@ -165,7 +163,7 @@ public class P2Driver {
         } //end of try
 
         catch(Exception e){
-            System.out.println("Exception: " + e.getMessage());
+            System.out.println("Exception: " + e);
         }
 
     } //end of main method
